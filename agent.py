@@ -40,7 +40,7 @@ def get_stock_sentiment_news(symbol: str) -> dict:
     Fetch latest stock price for a given symbol (e.g. 'AAPL', 'TSLA') 
     using Alpha Vantage with API key in the URL.
     """
-    url = f"https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers={symbol}&apikey=C9PE94QUEW9VWGFM"
+    url = f"https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers={symbol}&apikey="
     r = requests.get(url)
     return r.json()
 
@@ -137,4 +137,5 @@ while True:
     ai_message = out["messages"][-1].content
 
     # Print AI response
+
     print(f"AI: {ai_message}")
